@@ -1,0 +1,119 @@
+/* PreviewOverlay.css */
+.preview-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.preview-modal {
+    background: hsl(240, 2%, 12%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Ensure buttons stay at the bottom */
+    max-height: 90vh; /* Limits the modal height */
+    position: relative; /* Ensure button container positioning is inside */
+}
+
+.preview-modal img {
+    width: 100%;
+    max-height: 600px; /* Limit the height for larger screens */
+    display: block;
+    object-fit: contain; /* Ensure content fits well without stretching */
+    margin-bottom: 10px; /* Space between images */
+    flex-grow: 1; /* Allow images to grow within the available space */
+    overflow-y: auto; /* Enable scrolling for the PDF images */
+}
+
+.button-container {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: 15px;
+    justify-content: center; /* Center buttons */
+    padding: 10px 0; /* Ensures enough space around the buttons */
+    z-index: 10; /* Ensure buttons are above the content */
+    position: sticky;
+    bottom: 0; /* Stick the buttons at the bottom */
+    background: hsl(240, 2%, 12%); /* Ensure the background matches modal */
+    width: 100%; /* Ensures buttons stretch across the full width */
+}
+
+.close-button, .download-button {
+    padding: 8px 16px;
+    border: none;
+    background-image: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+    color: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px; /* Ensure the font size is legible */
+    transition: background-color 0.3s ease;
+}
+
+.close-button:hover, .download-button:hover {
+    background-color: hsl(35, 100%, 60%); /* Darken on hover */
+}
+
+/* Responsiveness: Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .preview-modal {
+        width: 90%; /* Allow the modal to take up more width on smaller screens */
+        max-width: none; /* Remove max-width constraint */
+    }
+
+    .preview-modal img {
+        max-height: 400px; /* Adjust image/pdf height for smaller screens */
+    }
+
+    .close-button, .download-button {
+        padding: 10px 20px; /* Make buttons larger for easier interaction on touchscreens */
+    }
+}
+
+@media (max-width: 480px) {
+    .preview-modal {
+        padding: 15px; /* Reduce padding for even smaller screens */
+        width: 95%; /* Increase modal width */
+    }
+
+    .preview-modal img {
+        max-height: 300px; /* Further reduce the height on smaller devices */
+    }
+
+    .close-button, .download-button {
+        padding: 12px 24px; /* Adjust buttons for better touch interaction */
+        font-size: 16px; /* Increase button text size */
+    }
+}
+
+/* Prevent horizontal overflow on very small devices */
+@media (max-width: 320px) {
+    .preview-overlay {
+        padding: 0 5px; /* Add padding to prevent overflow on very small screens */
+    }
+
+    .preview-modal {
+        width: 100%; /* Make sure the modal takes up full width */
+        padding: 10px;
+    }
+
+    .preview-modal img {
+        max-height: 250px; /* Reduce the height further on very small screens */
+    }
+
+    .close-button, .download-button {
+        font-size: 14px; /* Reduce font size for smaller screens */
+        padding: 10px 18px; /* Adjust padding for small devices */
+    }
+}
