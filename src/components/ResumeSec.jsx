@@ -9,6 +9,7 @@ import c3 from '../assets/Coursera vc.pdf';
 import c4 from '../assets/Coursera javascript.pdf';
 import c5 from '../assets/Coursera react basics.pdf';
 import c6 from '../assets/Coursera advanced react.pdf';
+import c7 from '../assets/Coursera principles of ui and ux.pdf';
 
 export default function ResumeSec({ classN }) {
     const [previewFile, setPreviewFile] = useState(null);
@@ -20,6 +21,7 @@ export default function ResumeSec({ classN }) {
         { title: 'javascript', institution: 'coursera', year: '', file: c4 },
         { title: 'react basics', institution: 'coursera', year: '', file: c5},
         { title: 'advanced react', institution: 'coursera', year: '', file: c6},
+        { title: 'principles of ui and ux', institution: 'coursera', year: '', file: c7},
     ];
 
     const handleDownload = (file, fileName) => {
