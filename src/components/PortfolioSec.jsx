@@ -10,14 +10,12 @@ import i7 from '../assets/3column.webp';
 import i8 from '../assets/results summary component.webp';
 import i9 from '../assets/article preview component.webp';
 import i10 from '../assets/launch-countdown-timer-main.webp';
-import i11 from '../assets/albayda.png';
 import i12 from '../assets/the gamer.png';
 
 export default function PortfolioSec({ classN }) {
     const projects = [
         { title: 'the gamer', category: 'cloning project', url: 'https://abonsama.github.io/the_gamers.com/', image: i12 },
         { title: 'launch-countdown-timer-main', category: 'front end mentor', url: 'https://abonsama.github.io/launch-countdown-timer-main/', image: i10 },
-        { title: 'albaydha', category: 'cloning project', url: 'https://abonsama.github.io/albaydha/', image: i11 },
         { title: 'FAQ', category: 'front end mentor', url: 'https://abonsama.github.io/faq-page/', image: i4 },
         { title: 'rating component', category: 'front end mentor', url: 'https://abonsama.github.io/rating-page/', image: i5 },
         { title: 'blog preview card', category: 'front end mentor', url: 'https://abonsama.github.io/Frontend-Mentor-Blog-preview-card/', image: i6 },
